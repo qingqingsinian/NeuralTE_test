@@ -1,0 +1,4 @@
+tm_index,cold_target,cold_solve_time,cold_iterations,minhop_target,minhop_solve_time,minhop_iterations,loadbalance_target,loadbalance_solve_time,loadbalance_iterations,greedyqos_target,greedyqos_solve_time,greedyqos_iterations,minhop_improvement_pct,loadbalance_improvement_pct,greedyqos_improvement_pct
+0,10394.838235,0.0280,2.0,10394.838235,0.0249,2.0,10394.838235,0.0231,2.0,10394.838235,0.0249,2.0,10.92,17.52,11.01
+1,11130.588235,0.0238,23.0,11130.588235,0.0242,23.0,11130.588235,0.0249,23.0,11130.588235,0.0229,23.0,-1.75,-4.81,3.96
+2,4858.797794,0.0214,45.0,4858.797794,0.0235,45.0,4858.797794,0.0242,45.0,4858.797794,0.0241,45.0,-9.86,-13.28,-12.46
