@@ -1,0 +1,204 @@
+瓶颈-》出入边的比例，经过的路径数
+================================================================================
+时间改善分析
+================================================================================
+
+disjoint3:
+  minhop      : 平均改善= -4.91%, 中位数= -3.12%, 标准差= 10.82%, 改善比例= 33.0%
+  loadbalance : 平均改善= -6.88%, 中位数= -5.62%, 标准差= 10.43%, 改善比例= 21.2%
+  greedyqos   : 平均改善=-13.27%, 中位数=-10.44%, 标准差= 14.35%, 改善比例= 10.6%
+
+disjoint4:
+  minhop      : 平均改善= -3.61%, 中位数= -2.10%, 标准差= 17.75%, 改善比例= 42.8%
+  loadbalance : 平均改善= -7.68%, 中位数= -6.33%, 标准差= 19.53%, 改善比例= 35.6%
+  greedyqos   : 平均改善=-12.73%, 中位数=-11.87%, 标准差= 19.97%, 改善比例= 23.8%
+
+disjoint5:
+  minhop      : 平均改善= -6.88%, 中位数= -5.67%, 标准差= 17.83%, 改善比例= 36.8%
+  loadbalance : 平均改善= -8.86%, 中位数= -8.41%, 标准差= 18.66%, 改善比例= 27.8%
+  greedyqos   : 平均改善= -8.79%, 中位数= -8.16%, 标准差= 17.96%, 改善比例= 28.2%
+
+shortpath3:
+  minhop      : 平均改善= -7.70%, 中位数= -6.82%, 标准差= 14.00%, 改善比例= 25.8%
+  loadbalance : 平均改善= -7.31%, 中位数= -6.79%, 标准差= 14.30%, 改善比例= 25.4%
+  greedyqos   : 平均改善=-60.84%, 中位数=-22.85%, 标准差= 64.76%, 改善比例= 13.0%
+
+shortpath4:
+  minhop      : 平均改善= -9.11%, 中位数= -7.80%, 标准差= 10.07%, 改善比例= 12.8%
+  loadbalance : 平均改善=-12.07%, 中位数=-10.11%, 标准差= 10.86%, 改善比例=  6.4%
+  greedyqos   : 平均改善=-12.25%, 中位数=-11.05%, 标准差=  9.93%, 改善比例=  5.8%
+
+shortpath5:
+  minhop      : 平均改善= -4.80%, 中位数= -4.42%, 标准差= 14.50%, 改善比例= 27.6%
+  loadbalance : 平均改善= -4.29%, 中位数= -5.05%, 标准差=  9.28%, 改善比例= 24.6%
+  greedyqos   : 平均改善=-12.16%, 中位数=-10.51%, 标准差= 16.42%, 改善比例= 13.6%
+================================================================================
+ABI DATASET ANALYSIS
+================================================================================
+
+OR Paths:
+  Traffic Matrices: 500
+
+  Time Performance:
+    Cold Start: 0.0045s
+    Warm Start: 0.0043s
+    Average Improvement: 0.81%
+    Median Improvement: 1.61%
+    Std Dev: 25.41%
+    Positive Improvements: 292 (58.4%)
+    Negative Improvements: 208 (41.6%)
+
+  Iteration Performance:
+    Cold Start: 76.3
+    Warm Start: 76.3
+    Improvement: 0.00%
+
+  Solution Quality:
+    Max Objective Difference: 0.000000
+
+  Detailed Statistics:
+    Min Time Improvement: -103.45%
+    Max Time Improvement: 52.03%
+    Time Improvement Percentiles:
+      25th: -10.00%
+      50th: 1.61%
+      75th: 18.32%
+      90th: 32.65%
+      95th: 34.43%
+
+================================================================================
+ABI DATASET - PATH TYPE COMPARISON
+================================================================================
+
+Path Type   K  Count  Avg Time Improvement (%)  Median Time Improvement (%)  Std Time Improvement (%)  Positive Ratio (%)  Cold Time (s)  Warm Time (s)
+       or N/A    500                   0.80668                         1.61                 25.413893                58.4       0.004483       0.004326
+
+Comparison saved to: abi_path_type_comparison.csv
+
+================================================================================
+GEANT DATASET ANALYSIS
+================================================================================
+
+OR Paths:
+  Traffic Matrices: 500
+
+  Time Performance:
+    Cold Start: 0.0133s
+    Warm Start: 0.0132s
+    Average Improvement: -0.02%
+    Median Improvement: 0.07%
+    Std Dev: 15.24%
+    Positive Improvements: 251 (50.2%)
+    Negative Improvements: 248 (49.6%)
+
+  Iteration Performance:
+    Cold Start: 37.1
+    Warm Start: 37.1
+    Improvement: 0.00%
+
+  Solution Quality:
+    Max Objective Difference: 0.000000
+
+  Detailed Statistics:
+    Min Time Improvement: -106.00%
+    Max Time Improvement: 41.12%
+    Time Improvement Percentiles:
+      25th: -6.53%
+      50th: 0.07%
+      75th: 8.51%
+      90th: 15.71%
+      95th: 20.75%
+
+================================================================================
+GEANT DATASET - PATH TYPE COMPARISON
+================================================================================
+
+Path Type   K  Count  Avg Time Improvement (%)  Median Time Improvement (%)  Std Time Improvement (%)  Positive Ratio (%)  Cold Time (s)  Warm Time (s)
+       or N/A    500                  -0.01704                         0.07                 15.241735                50.2       0.013343       0.013188
+
+Comparison saved to: geant_path_type_comparison.csv
+
+================================================================================
+COMPREHENSIVE SUMMARY REPORT
+================================================================================
+
+Dataset  Path Type   K  Count  Avg Time Improvement (%)  Median Time Improvement (%)  Std Time Improvement (%)  Positive Ratio (%)  Cold Time (s)  Warm Time (s)  Avg Iterations
+    Abi k_shortest   3    500                   1.42962                        0.315                 51.970055                52.6       0.001478       0.001475          28.372
+    Abi k_shortest   4    500                  -3.74456                        0.650                 43.840424                54.6       0.002072       0.001971          40.924
+    Abi k_shortest   5    500                  -6.23680                        1.275                 48.406092                54.8       0.002485       0.002375          50.456
+    Abi k_shortest   6    500                  -0.18628                        0.915                 41.320561                55.4       0.002814       0.002633          52.990
+    Abi k_disjoint   3    500                   4.03114                        0.000                 52.577161                46.2       0.001228       0.001307          19.844
+    Abi k_disjoint   4    500                   6.00628                        0.000                 68.851238                49.2       0.001216       0.001230          19.844
+    Abi k_disjoint   5    500                  -1.55764                        0.000                 66.716740                44.2       0.001231       0.001358          19.844
+    Abi k_disjoint   6    500                   6.41176                        0.000                 56.475894                45.0       0.001207       0.001258          19.844
+    Abi         or N/A    500                   0.80668                        1.610                 25.413893                58.4       0.004483       0.004326          76.340
+  GEANT k_shortest   3    500                   3.48276                        2.860                 22.642440                61.8       0.004714       0.004431          17.774
+  GEANT k_shortest   4    500                   0.30990                        1.450                 23.926336                54.2       0.005881       0.005748          31.850
+  GEANT k_shortest   5    500                  -0.97396                        0.105                 20.660268                50.4       0.006917       0.006858          30.900
+  GEANT k_shortest   6    500                   2.14778                        2.625                 16.244432                56.2       0.008163       0.007851          37.208
+  GEANT k_disjoint   3    500                   1.61216                        0.760                 20.816942                54.2       0.005518       0.005314          50.838
+  GEANT k_disjoint   4    500                   0.53258                        1.405                 21.169224                57.0       0.005736       0.005594          51.456
+  GEANT k_disjoint   5    500                   1.60326                        1.105                 21.115545                55.2       0.005836       0.005619          51.494
+  GEANT k_disjoint   6    500                   0.58780                        0.765                 20.100359                53.2       0.005873       0.005727          51.494
+  GEANT         or N/A    500                  -0.01704                        0.070                 15.241735                50.2       0.013343       0.013188          37.090
+
+Summary saved to: comprehensive_summary.csv
+
+================================================================================
+BY DATASET STATISTICS
+================================================================================
+
+Abi:
+  Total Tests: 9
+  Avg Time Improvement: 0.77%
+  Median Time Improvement: 0.53%
+  Positive Ratio: 51.2%
+  Avg Cold Time: 0.0020s
+  Avg Warm Time: 0.0020s
+
+GEANT:
+  Total Tests: 9
+  Avg Time Improvement: 1.03%
+  Median Time Improvement: 1.24%
+  Positive Ratio: 54.7%
+  Avg Cold Time: 0.0069s
+  Avg Warm Time: 0.0067s
+
+================================================================================
+BY PATH TYPE STATISTICS
+================================================================================
+
+k_shortest:
+  Total Tests: 8
+  Avg Time Improvement: -0.47%
+  Median Time Improvement: 1.27%
+  Positive Ratio: 55.0%
+
+k_disjoint:
+  Total Tests: 8
+  Avg Time Improvement: 2.40%
+  Median Time Improvement: 0.50%
+  Positive Ratio: 50.5%
+
+or:
+  Total Tests: 2
+or:
+  Total Tests: 2
+  Avg Time Improvement: 0.39%
+  Median Time Improvement: 0.84%
+  Positive Ratio: 54.3%
+
+or:
+  Total Tests: 2
+  Avg Time Improvement: 0.39%
+  Median Time Improvement: 0.84%
+  Total Tests: 2
+  Avg Time Improvement: 0.39%
+  Median Time Improvement: 0.84%
+  Median Time Improvement: 0.84%
+  Positive Ratio: 54.3%
+
+
+================================================================================
+ANALYSIS COMPLETED
+====================
